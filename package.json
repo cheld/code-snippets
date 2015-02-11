@@ -1,0 +1,12 @@
+{
+  "name":"code-snippets",
+  "private": true,
+  "devDependencies":{
+    "http-server": "^0.6.1"
+  },
+  "scripts": {
+    "postinstall": "bower install",
+    "prestart": "npm install",
+    "start": "http-server -a localhost -p 8080 -c-1"
+  }
+}
