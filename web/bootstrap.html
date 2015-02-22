@@ -4,6 +4,8 @@
     <style>
       h2 {color: red;}
     </style>
+     <script src="/code-snippets/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/code-snippets/bower_components/bootstrap/dist/js/bootstrap.js"></script>
   </head>
   <body>
 
@@ -32,6 +34,102 @@
       <span class="glyphicon glyphicon-star" ></span> Star
     </button>
 
+    <h2>Buttons:</h2>
+    Single Button
+    <button type="button" class="btn btn-default">Test</button>
+    <br>Button Group
+    <div class="btn-group" role="group" >
+      <button type="button" class="btn btn-default">Left</button>
+      <button type="button" class="btn btn-default">Middle</button>
+      <button type="button" class="btn btn-default">Right</button>
+    </div>
+
+    <h2>Breadcrums:</h2>
+    <ol class="breadcrumb">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Library</a></li>
+      <li class="active">Data</li>
+    </ol>
+
+    <h2>Tooltips:</h2>
+    <script>
+      $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+    </script>
+    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Tooltip on top</button>
+
+    <h2>Collapse:</h2>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingOne">
+      <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+          TITLE Panel 1
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+      <div class="panel-body">
+        CONTENT PANEL 1: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTwo">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          TITLE PANEL 2
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+      <div class="panel-body">
+        CONTENT PANEL 2: Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+      </div>
+    </div>
+  </div>
+
+
+
+  <h2>Tabs: </h2>
+  <div role="tabpanel">
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Home</a></li>
+    <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Profile</a></li>
+    <li role="presentation"><a href="#messages" aria-controls="messages" role="tab" data-toggle="tab">Messages</a></li>
+    <li role="presentation"><a href="#settings" aria-controls="settings" role="tab" data-toggle="tab">Settings</a></li>
+  </ul>
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane fade active" id="home">Content home</div>
+    <div role="tabpanel" class="tab-pane fade " id="profile">Content profile</div>
+    <div role="tabpanel" class="tab-pane fade " id="messages">Content message</div>
+    <div role="tabpanel" class="tab-pane fade" id="settings">Content settings</div>
+  </div>
+
+
+  <h2>Dropdown:</h2>
+  <div class="dropdown">
+  <button id="dLabel" type="button" data-toggle="dropdown" class="btn btn-default">
+    Dropdown trigger
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" >
+     <li><a href="https://twitter.com/fat">Another action</a></li>
+     <li><a href="https://twitter.com/fat">Something else here</a></li>
+     <li class="divider"></li>
+     <li><a href="https://twitter.com/fat">Separated link</a></li>
+  </ul>
+  </div>
+
+
+  <h2>end</h2>
+</div>
+</div>
+
+</div>
 
   </body>
 </html>
