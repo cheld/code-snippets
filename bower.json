@@ -2,7 +2,13 @@
   "name": "code-snippets",
   "version": "0.0.1",
   "dependencies": {
-    "bootstrap": "latest"
+    "bootstrap": "latest",
+    "core-icon-button": "Polymer/core-icon-button#^0.5.0",
+    "font-roboto": "Polymer/font-roboto#^0.5.0",
+    "core-header-panel": "Polymer/core-header-panel#^0.5.0",
+    "core-toolbar": "Polymer/core-toolbar#^0.5.0",
+    "paper-tabs": "Polymer/paper-tabs#^0.5.0",
+    "core-ajax": "Polymer/core-ajax#^0.5.0"
   },
   "private": true
 }
