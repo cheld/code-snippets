@@ -1,7 +1,13 @@
 <html>
-  <head></head>
+  <head>
+    <title>HTML Tests</title>
+    <style>
+      h2 {color: red;}
+    </style>
+
+  </head>
   <body>
-    <h2>Input Elements</h2>
+    <h2>Input Elements:</h2>
     <select name="top5" size="1">
       <option>Heino</option>
       <option>Michael Jackson</option>
@@ -9,5 +15,24 @@
       <option>Nina Hagen</option>
       <option>Marianne Rosenberg</option>
     </select>
+    <br>
+    <p>Vorname:<br><input name="vorname" type="text" size="30" maxlength="30"></p>
+
+    <h2>HTML 5 Input Types: </h2>
+    Submit to see validators in action.
+    <form>
+    <p>Pattern: <input pattern="^[0-9].*"> (Only numbers)</p>
+    <p>Color: <input type="color"></p>
+    <p>Date: <input type="date"></p>
+    <p>Datetime: <input type="datetime"></p>
+    <p>Email: <input type="email"></p>
+    <p>Month: <input type="month"></p>
+    <p>Number: <input type="number" min="2" max="7"></p>
+    <p>Range: <input type="range"></p>
+    <p>Tel: <input type="tel"></p>
+    <p>Time: <input type="time"></p>
+    <p>Url: <input type="url"></p>
+    <input type="submit">
+    </form>
   </body>
 </html>
