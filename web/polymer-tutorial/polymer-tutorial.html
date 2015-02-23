@@ -3,7 +3,7 @@
 
 <head>
 
-  <title>unquote</title>
+  <title>Polymer Tutorial</title>
 
   <meta name="viewport"
   content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
@@ -11,10 +11,11 @@
   <script src="../bower_components/webcomponentsjs/webcomponents.js">
   </script>
 
-  <link rel="import" href="../bower_components/font-roboto/roboto.html">
-  <link rel="import" href="../bower_components/core-header-panel/core-header-panel.html">
-  <link rel="import" href="../bower_components/core-toolbar/core-toolbar.html">
-  <link rel="import" href="../bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="/code-snippets/bower_components/font-roboto/roboto.html">
+  <link rel="import" href="/code-snippets/bower_components/core-header-panel/core-header-panel.html">
+  <link rel="import" href="/code-snippets/bower_components/core-toolbar/core-toolbar.html">
+  <link rel="import" href="/code-snippets/bower_components/paper-tabs/paper-tabs.html">
+  <link rel="import" href="/code-snippets/bower_components/paper-input/paper-input.html">
 
   <style>
   html,body {
@@ -70,6 +71,10 @@
     </core-toolbar>
 
     <!-- main page content will go here -->
+    <div class="container" layout vertical center>
+      <h2>Paper Elements:</h2>
+      <paper-input label="Your Name" floatinglabel="true"></paper-input>
+    </div>
 
   </core-header-panel>
 
