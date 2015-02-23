@@ -1,9 +1,23 @@
 <html>
   <head>
+    <title>Polymer Elements</title>
     <link rel="import" href="/code-snippets/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="/code-snippets/bower_components/paper-button/paper-button.html">
+    <link rel="import" href="/code-snippets/bower_components/core-icon/core-icon.html">
+    <style>
+      h2 {color: red;}
+    </style>
   </head>
   <body>
-      <h2>Paper Elements:</h2>
+      <h2>Core Icon</h2>
+      Icon: <core-icon icon="backup"></core-icon>
+      <h2>Paper Input:</h2>
       <paper-input label="Your Name" floatinglabel="true"></paper-input>
+      <h2>Paper Button</h2>
+      <paper-button raised style="background:blue; color:white">raised button</paper-button>
+      <paper-button raised>
+        <core-icon icon="favorite"></core-icon>
+        my button
+      </paper-button>
   </body>
 </html>

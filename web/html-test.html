@@ -34,5 +34,19 @@
     <p>Url: <input type="url"></p>
     <input type="submit">
     </form>
+
+    <h2>Data Attributes:</h2>
+    <ul>
+      <li data-animal-type="bird">Owl</li>
+      <li id="data-attr" data-blabla="blue">Attribute with data prefix</li>
+      <li id="new-attr" newAttr="green">Attribute without data prefix</li>
+    </ul>
+    <script>
+      var elementWithPrefix = document.querySelector("#data-attr");
+      elementWithPrefix.style.color=elementWithPrefix.dataset.blabla;
+
+      var elementWithoutPrefix = document.querySelector("#new-attr");
+      elementWithoutPrefix.style.color = elementWithoutPrefix.getAttribute('newAttr');
+    </script>
   </body>
 </html>
