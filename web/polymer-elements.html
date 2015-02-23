@@ -16,8 +16,8 @@
 
       <h2>Paper Input:</h2>
       <paper-input label="Paper Input" floatinglabel="true"></paper-input>
-      <paper-input-decorator label="Paper Input Decorator">
-        <input id="inputWithCounter" is="core-input"  maxlength="10">
+      <paper-input-decorator label="Paper Input Decorator" autoValidate="true" error="Please only type numbers">
+        <input id="inputWithCounter" is="core-input"  maxlength="10" pattern="[0-9].*" >
         <paper-char-counter class="counter" target="inputWithCounter"></paper-char-counter>
       </paper-input-decorator>
 
@@ -28,5 +28,15 @@
         <core-icon icon="favorite"></core-icon>
         my button
       </paper-button>
+
+      <h2>Layout:</h2>
+      <div horizontal layout>
+        <div flex three class="border">Alpha</div>
+        <div flex class="border">Beta</div>
+        <div flex two class="border">Gamma</div>
+      </div>
+      <style>
+        .border {border-style:solid; border-width: 1px;}
+      </style>
   </body>
 </html>
