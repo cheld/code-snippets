@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Flexbox</title>
+    <link rel="import" href="/code-snippets/bower_components/polymer/polymer.html">
+    <style>
+      h2 {color: red;}
+      div {background-color: grey;padding:5px;}
+      div > div {background-color: white;margin:5px;}
+    </style>
+  </head>
+  <body>
+    <h2>Horizontal Layout</h2>
+    <div horizontal layout>
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </div>
+
+    <h2>Horizontal Flex</h2>
+    <div horizontal layout>
+      <div>One</div>
+      <div flex>Two</div>
+      <div>Three</div>
+    </div>
+
+    <h2>Vertical Layout</h2>
+    <div vertical layout>
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </div>
+
+    <h2>Vertical Flex</h2>
+    <div vertical layout style="height:200px;">
+      <div>One</div>
+      <div flex>Two</div>
+      <div>Three</div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>CSS Test</title>
+    <style>
+      h2 {color: red;}
+      [custom] {background-color:blue;}
+      [custom=one] {background-color:green;}
+    </style>
+  </head>
+  <body>
+    <h2>Attribute Matcher</h2>
+    <div custom="one">One (exact match on value)</div>
+    <div custom>Two (match on attribute name)</div>
+    <div custom="three" >Three (match on attribute name)</div>
+  </body>
+
+</html>
