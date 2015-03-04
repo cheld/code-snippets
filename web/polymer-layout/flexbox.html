@@ -2,6 +2,7 @@
   <head>
     <title>Flexbox</title>
     <link rel="import" href="/code-snippets/bower_components/polymer/polymer.html">
+    <link rel="import" href="/code-snippets/bower_components/core-media-query/core-media-query.html">
     <style>
       h2 {color: red;}
       div {background-color: grey;padding:5px;}
@@ -36,5 +37,15 @@
       <div flex>Two</div>
       <div>Three</div>
     </div>
+
+    <h2>Dynamic Layout</h2>
+    <template is="auto-binding">
+    <core-media-query query="max-width: 640px" queryMatches="{{phoneScreen}}"></core-media-query>
+    <div layout vertical?="{{phoneScreen}}" horizontal?="{{!phoneScreen}}">
+      <div auto-vertical>Alpha</div>
+      <div auto-vertical>Beta</div>
+      <div auto-vertical>Gamma</div>
+    </div>
+</template>
   </body>
 </html>

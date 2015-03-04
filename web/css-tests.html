@@ -3,15 +3,28 @@
     <title>CSS Test</title>
     <style>
       h2 {color: red;}
-      [custom] {background-color:blue;}
-      [custom=one] {background-color:green;}
     </style>
   </head>
   <body>
     <h2>Attribute Matcher</h2>
+    <style>
+      [custom] {background-color:blue;}
+      [custom=one] {background-color:green;}
+    </style>
     <div custom="one">One (exact match on value)</div>
     <div custom>Two (match on attribute name)</div>
     <div custom="three" >Three (match on attribute name)</div>
+
+
+    <h2>CSS Media Queries</h2>
+    <style>
+     @media (min-width: 600px) {
+      div {
+        background-color: lightblue;
+      }
+     }
+    </style>
+    <div style="">Change color when larger than 600px</div>
   </body>
 
 </html>
