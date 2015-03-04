@@ -7,6 +7,7 @@
     <link rel="import" href="/code-snippets/bower_components/paper-button/paper-button.html">
     <link rel="import" href="/code-snippets/bower_components/core-icon/core-icon.html">
     <link ref="import" href="/code-snippets/bower_components/paper-progress/paper-progress.html">
+    <link rel="import" href="/code-snippets/bower_components/core-media-query/core-media-query.html">
     <style>
       h2 {color: red;}
     </style>
@@ -44,6 +45,10 @@
       <h2>Progress</h2>
       <paper-progress></paper-progress>
 
-
+      <h2>Media Query</h2>
+      <template is="auto-binding">
+      <core-media-query query="max-width: 400px" queryMatches="{{phoneScreen}}"></core-media-query>
+      <div>Small screen: {{phoneScreen}}</div>
+      </template>
   </body>
 </html>
