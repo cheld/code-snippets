@@ -73,10 +73,27 @@
       <div>One</div>
       <div>Two</div>
     </div>
-    <p>horizontal center-justified</p>
-    <div horizontal center-justified layout style="height:100px;">
+    <p> horizontal layout start-justified </p>
+    <div horizontal layout start-justified style="height:100px;">
       <div>One</div>
       <div>Two</div>
+    </div>
+    <p>horizontal layout center-justified</p>
+    <div horizontal layout center-justified style="height:100px;">
+      <div>One</div>
+      <div>Two</div>
+    </div>
+    <p>horizontal layout justified </p>
+    <div horizontal justified layout style="height:100px;">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
+    </div>
+    <p>horizontal layout around-justified  </p>
+    <div horizontal around-justified layout style="height:100px;">
+      <div>One</div>
+      <div>Two</div>
+      <div>Three</div>
     </div>
 
     <h2>Vertical Allignment</h2>
@@ -96,7 +113,14 @@
       <div>Two</div>
     </div>
 
-
+    <h2>Wrapping</h2>
+    <style>
+      #container div {height: 100px; width: 100;}
+    </style>
+      <div id="container" horizontal layout wrap >
+        <div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div><div>10</div>
+        <div>11</div><div>12</div><div>13</div><div>14</div><div>15</div><div>16</div>
+      </div>
 
 </template>
   </body>
