@@ -1,0 +1,21 @@
+<html>
+  <title>Animated Pages</title>
+  <link rel="import" href="/code-snippets/bower_components/core-animated-pages/core-animated-pages.html">
+  <style>
+    section {width:300px;height:300px;border-style:solid;boder-width:1px;}
+  </style>
+  <body>
+    <core-animated-pages id="switch" selected="1">
+      <section style="background-color:red;">1asdf</section>
+      <section style="background-color:blue;">2ggggggg</section>
+      <section>3tttt</section>
+      <section style="background-color:green;">4vvvv</section>
+      <section>5zzzzz</section>
+    </core-animated-pages>
+    <script>
+      document.querySelector('#switch').onclick = function(e) {
+        this.selected = (this.selected + 1) % this.items.length;
+      };
+    </script>
+  </body>
+</html>

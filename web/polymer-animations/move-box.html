@@ -1,0 +1,40 @@
+<html>
+  <head>
+    <title>Core Animated PAges</title>
+    <link rel="import" href="/code-snippets/bower_components/core-animated-pages/core-animated-pages.html">
+    <style>
+      #hero1 {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+      }
+      #hero2 {
+        position: absolute;
+        top: 200px;
+        left: 300px;
+        width: 300px;
+        height: 300px;
+        background-color: orange;
+      }
+  </style>
+  </head>
+  <body>
+    <core-animated-pages  id="switch" transitions="hero-transition">
+      <section id="page1">
+        <div id="hero1" hero-id="hero" hero></div>
+      </section>
+      <section id="page2">
+        <div id="hero2" hero-id="hero" hero></div>
+      </section>
+    </core-animated-pages>
+    <script>
+      document.querySelector('#switch').onclick = function(e) {
+          this.selected = (this.selected + 1) % this.items.length;
+      };
+    </script>
+  </body>
+
+</html>
