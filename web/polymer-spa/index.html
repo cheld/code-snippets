@@ -1,0 +1,107 @@
+<html>
+  <head>
+    <title>SPA</title>
+    <link rel="import" href="/code-snippets/bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="/code-snippets/bower_components/core-toolbar/core-toolbar.html">
+    <link rel="import" href="/code-snippets/bower_components/core-header-panel/core-header-panel.html">
+    <link rel="import" href="/code-snippets/bower_components/core-icons/core-icons.html">
+    <link rel="import" href="/code-snippets/bower_components/paper-icon-button/paper-icon-button.html">
+    <link rel="import" href="/code-snippets/bower_components/core-icon-button/core-icon-button.html">
+    <link rel="import" href="/code-snippets/bower_components/core-menu/core-menu.html">
+    <link rel="import" href="/code-snippets/bower_components/paper-item/paper-item.html">
+    <link rel="import" href="/code-snippets/bower_components/core-animated-pages/core-animated-pages.html">
+    <link rel="import" href="/code-snippets/bower_components/core-animated-pages/transitions/slide-from-right.html">
+    <style>
+      body {
+        font-family: "RobotoDraft";
+        font-weight: 300;
+      }
+
+      core-animated-pages {
+        width: 85%;
+        height: 85%;
+        -webkit-user-select: none;
+        overflow: hidden;
+      }
+
+      core-animated-pages > * {
+        border-radius: 5px;
+        font-size: 50px;
+        background-color: white;
+      }
+
+      body /deep/ core-toolbar {
+        background-color: #03a9f4;
+        color: #fff;
+      }
+
+      core-menu {
+        color: #01579b;
+        margin: 10px 0 0 0;
+      }
+
+      core-menu > core-item {
+        transition: all 300ms ease-in-out;
+      }
+
+      core-item a {
+        text-decoration: none;
+        color: currentcolor;
+        margin-left: 5px;
+      }
+
+      core-menu > core-item.core-selected {
+        background: #e1f5fe;
+      }
+
+      @media all and (max-width: 480px) {
+        core-animated-pages {
+          width: 100%;
+          height: 100%;
+        }
+}
+
+    </style>
+  </head>
+
+    <body unresolved fullbleed>
+      <template is="auto-binding">
+      <core-scaffold id="scaffold">
+
+        <nav>
+          <core-toolbar><span>Single Page Polymer</span></core-toolbar>
+          <core-menu selected="{{route}}">
+            <core-item noink block>
+              <core-icon icon="label-outline"></core-icon>
+              <a href="#one">page one {{route}}</a>
+            </core-item>
+            <core-item noink block>
+              <core-icon icon="label-outline"></core-icon>
+              <a href="#two">page</a>
+            </core-item>
+          </core-menu>
+        </nav>
+
+        <!-- flex makes the bar span across the top of the main content area -->
+        <core-toolbar tool flex>
+          <!-- flex spaces this element and justifies the icons to the right-side -->
+          <div flex>Application</div>
+          <core-icon-button icon="refresh"></core-icon-button>
+          <core-icon-button icon="add"></core-icon-button>
+        </core-toolbar>
+
+        <div layout horizontal center-center fit>
+            <core-animated-pages  selected="{{route}}" >
+              <section layout vertical center-center>
+                <div>Single</div>
+              </section>
+              <section layout vertical center-center>
+                <div>page</div>
+              </section>
+            </core-animated-pages>
+        </div>
+      </core-scaffold>
+      </template>
+    </body>
+
+</html>
