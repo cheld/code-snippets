@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en" ng-app="phonecatApp">
+<head>
+  <meta charset="utf-8">
+  <title>My HTML File</title>
+  <link rel="stylesheet" href="/code-snippets/bower_components/bootstrap/dist/css/bootstrap.css">
+  <link rel="stylesheet" href="css/app.css">
+  <script src="/code-snippets/bower_components/angular/angular.js"></script>
+  <link rel="import" href="/code-snippets/bower_components/paper-input/paper-input.html">
+</head>
+<body ng-controller="PhoneListCtrl">
+
+  <ul>
+    <li ng-repeat="phone in phones">
+      <span>{{phone.name}}</span>
+      <p>{{phone.snippet}}</p>
+      <paper-input label="{{phone.name}}" floatinglabel="true"></paper-input>
+    </li>
+  </ul>
+
+  <script>
+    var phonecatApp = angular.module('phonecatApp', []);
+    phonecatApp.controller('PhoneListCtrl', function ($scope) {
+      $scope.phones = [
+        {'name': 'Nexus S',
+         'snippet': 'Fast just got faster with Nexus S.'},
+        {'name': 'Motorola XOOM™ with Wi-Fi',
+         'snippet': 'The Next, Next Generation tablet.'},
+        {'name': 'MOTOROLA XOOM™',
+         'snippet': 'The Next, Next Generation tablet.'}
+      ];
+    });
+  </script>
+</body>
+</html>
