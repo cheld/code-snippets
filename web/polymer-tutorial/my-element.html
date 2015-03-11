@@ -1,10 +1,37 @@
 <link rel="import" href="/code-snippets/bower_components/polymer/polymer.html">
 <link rel="import" href="/code-snippets/bower_components/core-ajax/core-ajax.html">
 
-<polymer-element name="my-element" noscript>
+<polymer-element name="my-element" attributes="hostProp">
   <template>
-    <span>I'm <b>my-element</b>. This is my Shadow DOM.</span>
+    <style>
+      h2 {color: red;}
+    </style>
+    <h2>Ajax -> binding</h2>
     <core-ajax url="/code-snippets/web/index.html" auto response="{{resp}}"></core-ajax>
     <textarea value="{{resp}}"></textarea>
+
+    <h2>Binding on JavaScript Property</h2>
+    <div>hi {{creator}}</div>
+
+    <h2>Binding to attribute value</h2>
+     <span style="color: {{color}}">data-binding on values: {{color}}</span>
+
+     <h2>Call Function</h2>
+     <input id="nameInput" value="{{name}}"
+           placeholder="Enter name...">Textwritten <span id="output"></span>
+
+     <h2>Publish Property</h2>
+     <div>property from host: {{hostProp}}</div>
+
   </template>
+  <script>
+    Polymer({
+      creator: 'Christoph',
+      color: 'green',
+      nameChanged: function(){
+        this.name = this.name.toUpperCase();
+        this.$.output.innerHTML = this.name;
+      }
+    });
+  </script>
 </polymer-element>

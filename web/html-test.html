@@ -35,6 +35,14 @@
     <input type="submit">
     </form>
 
+    <h2>Query Selector</h2>
+    <div id="elem">some text</div>
+    <div id="elem2">some text</div>
+    <script>
+      document.querySelector('#elem').innerHTML = 'new text';
+      document.querySelector('#elem2').textContent = 'new text';
+    </script>
+
     <h2>Data Attributes:</h2>
     <ul>
       <li data-animal-type="bird">Owl</li>
