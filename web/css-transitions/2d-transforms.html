@@ -6,18 +6,50 @@
     <h2>Translate (Moving)</h2>
     <div id="translate"></div>
     <style>
-    div {
-        width: 300px;
-        height: 100px;
-        background-color: yellow;
-        border: 1px solid black;
-        transition: transform 2s;
-    }
-    div:hover {
-        transform: translate(50px,100px); /* Standard syntax */
-    }
+      #translate {
+          width: 300px;
+          height: 100px;
+          background-color: yellow;
+          border: 1px solid black;
+          transition: transform 2s;
+      }
+      #translate:hover {
+          transform: translate(50px,100px); /* Standard syntax */
+      }
     </style>
 
-    <h2></h2>
+    <h2>Rotate</h2>
+    <div id="rotate"></div>
+    <style>
+      #rotate {
+          width: 300px;
+          height: 100px;
+          background-color: yellow;
+          border: 1px solid black;
+          transition: transform 0,5s;
+      }
+      #rotate:hover {
+          transform: rotate(20deg); /* Standard syntax */
+      }
+    </style>
+
+    <h2>Scale</h2>
+    <div id="scale"></div>
+    <style>
+      #scale {
+          margin: 100px;
+          width: 200px;
+          height: 100px;
+          background-color: yellow;
+          border: 1px solid black;
+          border: 1px solid black;
+          transition: transform 0,5s;
+      }
+      #scale:hover {
+          transform: scale(2,3); /* two time width, three times height */
+      }
+    </style>
+
+
   </body>
 </html>
