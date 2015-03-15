@@ -1,0 +1,70 @@
+<html>
+  <head>
+    <title>Simple transitions</title>
+  </head>
+  <body>
+    <h2>Single Property/h2>
+    <div id="single"></div>
+    <style>
+    #single {
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: width 2s;
+    }
+
+    #single:hover  {
+      width: 300px;
+    }
+    </style>
+
+    <h2>Multi Propery</h2>
+    <div id="multi"></div>
+    <style>
+    #multi {
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: width 2s, height 10s;
+    }
+
+    #multi:hover  {
+      width: 300px;
+      height: 300px;
+    }
+    </style>
+
+    <h2>Time Delay</h2>
+    <div id="delay"></div>
+    <style>
+    #delay {
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: width 2s;
+      transition-delay: 1s;
+    }
+
+    #delay:hover  {
+      width: 300px;
+    }
+    </style>
+
+    <h2>Transition + Transformation</h2>
+    <div id="transformation"></div>
+    <style>
+    #transformation {
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 2s, height 2s, transform 0,5s;
+    }
+
+    #transformation:hover {
+        width: 300px;
+        height: 300px;
+        transform: rotate(180deg);
+    }
+    </style>
+  </body>
+</html>
