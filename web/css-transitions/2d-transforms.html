@@ -3,6 +3,7 @@
     <title>2D Transforms</title>
   </head>
   <body>
+    <a href="http://www.w3schools.com/css/css3_2dtransforms.asp">W3C School</a>
     <h2>Translate (Moving)</h2>
     <div id="translate"></div>
     <style>
@@ -50,6 +51,39 @@
       }
     </style>
 
+    <h2>Skew</h2>
+    <div id="skew"></div>
+    <style>
+    #skew {
+        margin: 50px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        border: 1px solid black;
+        transition: transform 2s;
+    }
+    #skew:hover {
+        transform: skew(20deg, 10deg);
+    }
+    </style>
+
+    <h2>Matrix</h2>
+    <div id="matrix"></div>
+    <style>
+    #matrix {
+        margin: 50px;
+        width: 200px;
+        height: 100px;
+        background-color: yellow;
+        border: 1px solid black;
+        border: 1px solid black;
+        transition: transform 2s;
+    }
+    #matrix:hover {
+        transform: matrix(1, 0, 0.5, 1, 150, 0);
+    }
+    </style>
 
   </body>
 </html>
