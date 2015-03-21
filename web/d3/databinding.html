@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <title>d3-data-binding</title>
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h2>Binding</h2>
+    <div id="binding">
+      <p>Test</p>
+      <p>asdf</p>
+    </div>
+    <script>
+     var data = [4, 8, 15, 16, 23, 42];
+      d3.select('div').selectAll('p').data(data).enter().append('p').html("hi");
+
+    </script>
+  </body>
+</html>
