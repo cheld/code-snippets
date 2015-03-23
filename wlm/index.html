@@ -12,6 +12,8 @@
   <link rel="import" href="/code-snippets/bower_components/core-drawer-panel/core-drawer-panel.html">
   <link ref="import" href="/code-snippets/bower_components/core-icons/core-icons.html">
   <link rel="import" href="/code-snippets/bower_components/paper-input/paper-input.html">
+  <link rel="import" href="/code-snippets/bower_components/paper-icon-button/paper-icon-button.html">
+  <link rel="import" href="/code-snippets/bower_components/core-animated-pages/core-animated-pages.html">
 
     <style>
       html,body {
@@ -52,28 +54,61 @@
       }
 
       [drawer] {
-        background-color: #B99588;
-        border-right: 1px solid #ccc;
+        background-color: #D9D5D8;
+        border-right: 1px solid #cccc;
       }
 
       [main] {
-        background-color: #4F7DC9;
+        //background-color: #4F7DC9;
       }
+    .card {
+      
+      height: 150px;
+      width: 150px;
+      font-size: 50px;
+      margin: 8px;
+      background-color: tomato;
+      border-radius: 4px;
+    }
+
     </style>
 </head>
 
 <body unresolved>
     <core-header-panel>
-      <core-toolbar>
-        <paper-tabs id="tabs" selected="cluster" self-end>
-          <paper-tab name="stats">Stats</paper-tab>
-          <paper-tab name="cluster">Cluster</paper-tab>
-          <paper-tab name="scheduling">Scheduling</paper-tab>
-        </paper-tabs>
-        <div flex></div>
-      <paper-input label="Paper Input" style="background-color:white"></paper-input>
-      <core-icon icon="search"></core-icon>
-      </core-toolbar>
+        <core-toolbar>
+          
+                      
+          <core-animated-pages id="switch" transitions="hero-transition cross-fade" fit>
+              <section layout horizontal center>
+                    
+                    
+                    <paper-tabs id="tabs" selected="cluster" self-end cross-fade>
+                             <paper-tab name="stats">Stats</paper-tab>
+                            <paper-tab name="cluster">Cluster</paper-tab>
+                            <paper-tab name="scheduling">Scheduling</paper-tab>
+                      </paper-tabs>
+                      
+                      
+                      <!--<paper-input label="Paper Input" style="background-color:white"></paper-input> -->
+                     <div flex></div>
+                     <paper-icon-button onclick="toggleHeader()" hero-id="hero" icon="search" hero></paper-icon-button>
+                     <paper-icon-button icon="input"></paper-icon-button>
+              </section>
+              <section id="editmode" layout horizontal center>
+                <paper-icon-button onclick="toggleHeader()" icon="arrow-back" cross-fade></paper-icon-button>
+                <div cross-fade style="margin-left:10px;margin-right:60px;font-size:20px">back</div>
+                <div style="background-color:#07b3f8;width:400px;padding:10px;font-size:15px;color:#A7C3ff" cross-fade>Filter...</div>
+                <paper-icon-button hero-id="hero" icon="search" hero></paper-icon-button>
+                <div flex></div>
+                <paper-icon-button icon="input"></paper-icon-button>
+              </section>
+              
+ 
+           
+          </core-animated-pages>
+          
+        </core-toolbar>
 
       <core-drawer-panel rightDrawer>
         <div drawer></div>
@@ -82,11 +117,23 @@
         </div>
       </core-drawer-panel>
 
-    </core-header-panel>
+    
+
+
+    
+</core-header-panel>
+
 
   <script>
     var phonecatApp = angular.module('wlm', []);
+    
+      function toggleHeader(){
+          var elem = document.querySelector('#switch');
+           elem.selected = (elem.selected + 1) % elem.items.length;
+      };
 
+
+    
   </script>
 </body>
 </html>
