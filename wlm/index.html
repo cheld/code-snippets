@@ -14,6 +14,8 @@
   <link rel="import" href="/code-snippets/bower_components/paper-input/paper-input.html">
   <link rel="import" href="/code-snippets/bower_components/paper-icon-button/paper-icon-button.html">
   <link rel="import" href="/code-snippets/bower_components/core-animated-pages/core-animated-pages.html">
+  <link rel="import" href="/code-snippets/bower_components/paper-ripple/paper-ripple.html">
+  
 
     <style>
       html,body {
@@ -83,23 +85,24 @@
               <section layout horizontal center>
                     
                     
-                    <paper-tabs id="tabs" selected="cluster" self-end cross-fade>
+                      <paper-tabs id="tabs" selected="cluster" self-end cross-fade>
                              <paper-tab name="stats">Stats</paper-tab>
                             <paper-tab name="cluster">Cluster</paper-tab>
                             <paper-tab name="scheduling">Scheduling</paper-tab>
                       </paper-tabs>
                       
-                      
                       <!--<paper-input label="Paper Input" style="background-color:white"></paper-input> -->
                      <div flex></div>
                      <paper-icon-button onclick="toggleHeader()" hero-id="hero" icon="search" hero></paper-icon-button>
+                     <div style="background-color:#07b3f8;width:0px;padding:0px;font-size:15px;color:#A7C3ff" hero-id="text" hero></div>
                      <paper-icon-button icon="input"></paper-icon-button>
               </section>
+              
               <section id="editmode" layout horizontal center>
                 <paper-icon-button onclick="toggleHeader()" icon="arrow-back" cross-fade></paper-icon-button>
                 <div cross-fade style="margin-left:10px;margin-right:60px;font-size:20px">back</div>
-                <div style="background-color:#07b3f8;width:400px;padding:10px;font-size:15px;color:#A7C3ff" cross-fade>Filter...</div>
                 <paper-icon-button hero-id="hero" icon="search" hero></paper-icon-button>
+                <div style="background-color:#07b3f8;width:400px;padding:10px;font-size:15px;color:#A7C3ff" hero-id="text" hero>Filter...</div>
                 <div flex></div>
                 <paper-icon-button icon="input"></paper-icon-button>
               </section>
