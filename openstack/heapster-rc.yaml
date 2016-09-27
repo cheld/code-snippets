@@ -1,11 +1,11 @@
 apiVersion: v1
 kind: ReplicationController
 metadata:
-  name: heapster-v15
+  name: heapster-v16
   namespace: kube-system
   labels:
     k8s-app: heapster
-    version: v1.1.0
+    version: v16
 spec:
   replicas: 1
   selector:
@@ -30,5 +30,5 @@ spec:
               memory: 200Mi
           command:
             - /heapster
-            - --source=kubernetes:https://kubernetes.default
+            - --source=kubernetes
             - --metric_resolution=60s
