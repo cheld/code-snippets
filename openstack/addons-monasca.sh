@@ -3,7 +3,7 @@
 # Runs Heapster in standalone mode
 docker run --net=host -d gcr.io/google_containers/heapster:v1.1.0 -port 8082 \
     --source="kubernetes:http://127.0.0.1:8080?inClusterConfig=false&auth=" \
-    --sink="monasca:?user-id=ff69eeb3fd3b412a917be02ecc833963&password=password&keystone-url=http://127.0.0.1:5000/v3"
+    --sink="monasca:?user-id=ee8b70289cbb45d88e4befb17a0e6c55&password=password&monasca-url=http://127.0.0.1:8070/v2.0&keystone-url=http://127.0.0.1:5000/v3"
 
 sleep 5
 
