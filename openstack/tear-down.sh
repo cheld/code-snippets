@@ -9,7 +9,9 @@
     docker rm -f $(docker ps | grep "k8s_" | awk '{print $1}')
   fi
 
-  docker rm -f $(docker ps -q)
+  if [[ $(docker ps | wc -l) != 1 ]]; then
+    docker rm -f $(docker ps -q)
+  fi
 
   if [[ -d /var/lib/kubelet ]]; then
         # umount if there are mounts in /var/lib/kubelet
