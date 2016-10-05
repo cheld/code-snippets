@@ -1,11 +1,15 @@
 #!/bin/bash
 
 # Runs Heapster in standalone mode
-docker run --net=host -d gcr.io/google_containers/heapster:v1.1.0 -port 8082 \
+docker run --net=host -d fest/heapster:v1.2.0 \
     --source="kubernetes:http://127.0.0.1:8080?inClusterConfig=false&auth=" \
-    --sink="monasca:?user-id=ee8b70289cbb45d88e4befb17a0e6c55&password=password&monasca-url=http://127.0.0.1:8070/v2.0&keystone-url=http://127.0.0.1:5000/v3"
+    --sink="monasca:?user-id=7b23b0d78f124b1aa2439f492dd0e758&password=password&tenant-id=802a70dc02424780adbb7a118e1c1c5c&keystone-url=http://127.0.0.1:5000/v3"
 
 sleep 5
 
 docker run --net=host -d gcr.io/google_containers/kubernetes-dashboard-amd64:v1.4.0 --apiserver-host=http://127.0.0.1:8080 \
     --port 9090 --heapster-host=http://127.0.0.1:8082 
+
+sleep 5
+
+docker run -it --net=host -v /var/lib/docker/containers:/var/lib/docker/containers:ro -v /var/log/containers:/var/log/containers:ro taimir93/logstash-monasca:v1.1 /run.sh http://127.0.0.1:5607/v3.0 http://127.0.0.1:5000/v3 mini-mon monasca-agent password Default

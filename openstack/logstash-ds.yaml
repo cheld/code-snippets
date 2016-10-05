@@ -1,0 +1,48 @@
+apiVersion: extensions/v1beta1
+kind: DaemonSet
+metadata:
+  name: logstash-monasca
+  labels:
+    name: logstash-monasca
+spec:
+  template:
+    metadata:
+      labels:
+        app: logstash-monasca
+    spec:
+      hostNetwork: true
+      containers:
+      - name: logstash-monasca
+        image: taimir93/logstash-monasca:v1.1
+        command:
+          - /run.sh
+          - http://127.0.0.1:5607/v2.0/log/
+          - http://127.0.0.1:5000/v3
+          - mini-mon
+          - monasca-agent
+          - password
+          - default
+        resources:
+          limits:
+            memory: 500Mi
+            cpu: 1000m
+          requests:
+            cpu: 200m
+            memory: 300Mi
+        volumeMounts:
+        - name: varlog
+          mountPath: /var/log
+        - name: varlibdockercontainers
+          mountPath: /var/lib/docker/containers
+          readOnly: true
+        # because of logstash
+        tty: true
+        # for debugging
+        stdin: true
+      volumes:
+      - name: varlog
+        hostPath:
+          path: /var/log
+      - name: varlibdockercontainers
+        hostPath:
+          path: /var/lib/docker/containers
