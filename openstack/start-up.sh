@@ -1,0 +1,2 @@
+./hyperkube.sh
+./addons.sh
