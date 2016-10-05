@@ -10,7 +10,7 @@
   fi
 
   if [[ $(docker ps | wc -l) != 1 ]]; then
-    docker rm -f $(docker ps -q)
+    docker rm -f $(docker ps -aq)
   fi
 
   if [[ -d /var/lib/kubelet ]]; then
