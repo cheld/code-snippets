@@ -9,7 +9,7 @@
     docker rm -f $(docker ps | grep "k8s_" | awk '{print $1}')
   fi
 
-  if [[ $(docker ps | wc -l) != 1 ]]; then
+  if [[ $(docker ps -aq | wc -l) != 0 ]]; then
     docker rm -f $(docker ps -aq)
   fi
 
