@@ -19,7 +19,6 @@
             }
          },
          "spec":{
-	    "hostNetwork": true,
             "containers":[
                {
                   "name":"guestbook",
