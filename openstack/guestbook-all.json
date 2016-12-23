@@ -1,4 +1,27 @@
 {
+   "kind":"Service",
+   "apiVersion":"v1",
+   "metadata":{
+      "name":"guestbook",
+      "labels":{
+         "app":"guestbook"
+      }
+   },
+   "spec":{
+      "ports": [
+         {
+           "port":80,
+           "targetPort":3010,
+	   "nodePort": 30030
+         }
+      ],
+      "selector":{
+         "app":"guestbook"
+      },
+      "type": "NodePort"
+   }
+}
+{
    "kind":"ReplicationController",
    "apiVersion":"v1",
    "metadata":{
@@ -26,7 +49,7 @@
                   "ports":[
                      {
                         "name":"http-server",
-                        "containerPort":3000
+                        "containerPort":3010
                      }
                   ]
                }
@@ -35,3 +58,5 @@
       }
    }
 }
+
+
