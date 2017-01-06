@@ -16,7 +16,7 @@ func main() {
 		log.Fatal(err)
 	}
 	origin := "http://localhost/"
-	url := "ws://172.31.0.123:1234/"
+	url := "ws://192.168.1.109:1234/"
 	con, err := websocket.Dial(url, "", origin)
 	if err != nil {
 		fmt.Println(err)
@@ -38,6 +38,7 @@ func tunToCon(tun *water.Interface, con net.Conn){
 
 	for {
 		frame.Resize(1500)
+		fmt.Println("waiting for tun")
 		n, err := tun.Read([]byte(frame))
 		if err != nil {
 			log.Fatal(err)

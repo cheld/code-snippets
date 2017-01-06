@@ -8,11 +8,15 @@ import (
 	"net/http"
 
 	"time"
-	"golang.org/x/net/websocket"
+
+	"github.com/gorilla/websocket"
+	"strings"
 )
 
-var conIn *websocket.Conn
-var conOut *websocket.Conn
+//var conIn *websocket.Conn
+//var conOut *websocket.Conn
+
+var con map[string]*websocket.Conn
 
 var upgrader = websocket.Upgrader{
 	ReadBufferSize:  1024,
@@ -23,6 +27,7 @@ var upgrader = websocket.Upgrader{
 } // use default options
 
 func main(){
+	con = make(map[string]*websocket.Conn)
 
 
 	http.HandleFunc("/",Pipe)
@@ -45,20 +50,28 @@ func Pipe(w http.ResponseWriter, r *http.Request){
 	defer c.Close()
 	fmt.Println("upgraded")
 
-	if conIn == nil {
-		conIn = c
-	} else if conOut == nil {
-		conOut = c
-		go inToOut()
-		go outToIn()
+	remoteAddr := strings.Split(c.UnderlyingConn().RemoteAddr().String(),":")[0]
+	fmt.Println(remoteAddr)
+
+	if con["10.1.0.10"] == nil {
+		fmt.Println("first connection recieves 10.1.0.10")
+		con["10.1.0.10"] = c
+	} else if con["10.1.0.11"] == nil {
+		fmt.Println("second connection recieves 10.1.0.11")
+		con["10.1.0.11"] = c
 	}
+
+
+	go inToOut(c)
+
 	time.Sleep(1000000000000)
 }
 
-func inToOut(){
-	//var frame ethernet.Frame
+func inToOut(conIn *websocket.Conn){
+	fmt.Println("thread started")
+	var frame ethernet.Frame
 	for {
-		//frame.Resize(1500)
+		frame.Resize(1500)
 		//var n int
 		var err error
 		//var data []byte
@@ -66,10 +79,21 @@ func inToOut(){
 		if err != nil {
 			log.Fatal(err)
 		}
-		log.Println(mt)
-		log.Println(message)
-		//frame = data
+
+		frame = message
+
+		//fmt.Printf("Payload: % x\n", frame.Payload())
 		//frame = frame[:n]
+
+		payload := frame.Payload()
+
+		//t := fmt.Sprintf("test %v",int(payload[3]))
+		dest := net.IPv4(payload[2],payload[3],payload[4],payload[5])
+
+		fmt.Printf("sending data to %v",dest)
+		conOut := con[dest.String()]
+
+
 		conOut.WriteMessage(mt,message)
 		//conOut.Write(frame)
 		//fmt.Printf("Dst: a%s\n", frame.Destination())
@@ -79,27 +103,27 @@ func inToOut(){
 	}
 }
 
-func outToIn(){
-	var frame ethernet.Frame
-	for {
-		frame.Resize(1500)
-		var err error
+//func outToIn(){
+//	var frame ethernet.Frame
+//	for {
+//		frame.Resize(1500)
+//		var err error
 		//var data []byte
-		mt, message, err := conOut.ReadMessage();
-		if err != nil {
-			log.Fatal(err)
-		}
-		log.Println(mt)
-		log.Println(message)
+//		mt, message, err := conOut.ReadMessage();
+//		if err != nil {
+//			log.Fatal(err)
+//		}
+//		log.Println(mt)
+//		log.Println(message)
 		//frame = data
-		conIn.WriteMessage(mt,message)
+		//conIn.WriteMessage(mt,message)
 		//conIn.Write(frame)
 		//fmt.Printf("Dst: a%s\n", frame.Destination())
 		//fmt.Printf("Src: %s\n", frame.Source())
 		//fmt.Printf("Ethertype: % x\n", frame.Ethertype())
 		//fmt.Printf("Payload: % x\n", frame.Payload())
-	}
-}
+//	}
+//}
 
 
 func main3() {
