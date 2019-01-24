@@ -2,7 +2,7 @@
   "name":"code-snippets",
   "private": true,
   "devDependencies":{
-    "http-server": "^0.11.1"
+    "http-server": "^0.9.0"
   },
   "scripts": {
     "postinstall": "bower install",
