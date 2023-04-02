@@ -29,12 +29,12 @@ jobs:
     needs: build
     environment: test
     steps:
-    - name: Test
-      run: echo "qwertz" >> $DAY_OF_WEEK
 
     - name: Deploy ${{ env.c }}
  
-      run: echo ${{ env.DAY_OF_WEEK }}
+      run: | 
+        DAY_OF_WEEK=aaa
+        echo ${{ env.DAY_OF_WEEK }}
       
   
 
