@@ -20,7 +20,7 @@ jobs:
     steps:
 
     - name: Build
-      run: echo 'hello world'
+      run: export DAY_OF_WEEK="qwertz"
       
   deploy:
     runs-on: ubuntu-latest
@@ -30,7 +30,7 @@ jobs:
     environment: test
     steps:
 
-    - name: Deploy ${{ env.DAY_OF_WEEK }}
+    - name: Deploy ${{ env.c }}
  
       run: echo ${{ env.DAY_OF_WEEK }}
 
