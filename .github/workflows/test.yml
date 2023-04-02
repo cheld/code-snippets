@@ -23,9 +23,11 @@ jobs:
       
   deploy:
     runs-on: ubuntu-latest
+    env:
+      Greeting: Hello
     needs: build
     steps:
 
     - name: Deploy
-      run: echo 'hello world  $DAY_OF_WEEK!'
+      run: echo "$Greeting world  $DAY_OF_WEEK!"
 
