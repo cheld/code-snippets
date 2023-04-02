@@ -30,7 +30,7 @@ jobs:
     environment: test
     steps:
 
-    - name: Deploy
+    - name: Deploy ${{ env.DAY_OF_WEEK }}
  
       run: echo ${{ env.DAY_OF_WEEK }}
 
