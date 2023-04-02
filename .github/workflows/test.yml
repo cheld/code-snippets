@@ -27,10 +27,10 @@ jobs:
     env:
       Greeting: Hello
     needs: build
-    environment: ${{ fromJSON(env.DAY_OF_WEEK) }}
+    environment: test
     steps:
 
     - name: Deploy
  
-      run: echo "$Greeting world  $DAY_OF_WEEK!"
+      run: echo ${{ env.DAY_OF_WEEK }}
 
