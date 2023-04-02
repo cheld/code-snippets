@@ -29,8 +29,12 @@ jobs:
     needs: build
     environment: test
     steps:
+    - name: Test
+      run: DAY_OF_WEEK=qwertz
 
     - name: Deploy ${{ env.c }}
  
       run: echo ${{ env.DAY_OF_WEEK }}
+      
+  
 
