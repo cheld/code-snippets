@@ -27,7 +27,7 @@ jobs:
     env:
       Greeting: Hello
     needs: build
-    environment: ${{ vars.ENVIRONMENT_STAGE }}
+    environment: ${{ env.DAY_OF_WEEK }}
     steps:
 
     - name: Deploy
