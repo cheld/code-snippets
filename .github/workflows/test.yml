@@ -8,6 +8,9 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
+    
+env:
+  DAY_OF_WEEK: Monday
 
 jobs:
 
@@ -24,5 +27,5 @@ jobs:
     steps:
 
     - name: Deploy
-      run: echo 'hello world'
+      run: echo 'hello world  $DAY_OF_WEEK!'
 
