@@ -30,7 +30,7 @@ jobs:
     environment: test
     steps:
     - name: Test
-      run: DAY_OF_WEEK=qwertz
+      run: echo "qwertz" >> $DAY_OF_WEEK
 
     - name: Deploy ${{ env.c }}
  
