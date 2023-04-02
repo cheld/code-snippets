@@ -16,7 +16,7 @@ env:
 jobs:
 
   build:
-    runs-on: ${{ env.LINUX_VERSION }}
+    runs-on: ubuntu-latest
     steps:
 
     - name: Build
@@ -30,5 +30,6 @@ jobs:
     steps:
 
     - name: Deploy
+      if: ${{ env.DAY_OF_WEEK == 'Monday' }}
       run: echo "$Greeting world  $DAY_OF_WEEK!"
 
