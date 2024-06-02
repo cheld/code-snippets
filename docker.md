@@ -6,7 +6,6 @@ assignees:
 
 ---
 
-**Stop. This guide has been superseded by [Minikube](../minikube/) which is the recommended method of running Kubernetes on your local machine.**
 
 The following instructions show you how to set up a simple, single node Kubernetes cluster using Docker.
 
